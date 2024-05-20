@@ -9,8 +9,8 @@ export default function Home() {
       <div className="text-left">
         <Link className="block" href="/products">Products</Link>
         <Link className="block" href="/blog">Blog</Link>
-        <Link className="block" href="/profile">Profile</Link>
         <Link className="block" href="/about">About</Link>
+        <Link className="block" href="/profile">Profile</Link>
       </div>
     </main>
   );
