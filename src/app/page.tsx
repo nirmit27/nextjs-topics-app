@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-3xl">
       <TopicList />
+      <TopicList />
     </div>
   );
 }
