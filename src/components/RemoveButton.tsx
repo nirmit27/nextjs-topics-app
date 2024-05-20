@@ -1,5 +1,9 @@
-import { FaTrash } from "react-icons/fa";
+import { HiOutlineTrash } from "react-icons/hi";
 
 export default function RemoveButton() {
-  return <h1>Remove Button</h1>;
+  return (
+    <button className="text-red-500">
+      <HiOutlineTrash size={24} />
+    </button>
+  );
 }
