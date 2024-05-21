@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useState, FormEvent } from "react";
 
-export default function EditoldNote({ oldNote }: any) {
+export default function Editoldtopic({ oldNote }: any) {
   console.log(oldNote.note._id);
 
   const router = useRouter();
@@ -27,7 +27,7 @@ export default function EditoldNote({ oldNote }: any) {
       if (res.ok) {
         router.replace("/");
         router.refresh();
-      } else throw new Error("Failed to update note.");
+      } else throw new Error("Failed to update topic.");
     } catch (error) {
       console.error(error);
     }
@@ -74,7 +74,7 @@ export default function EditoldNote({ oldNote }: any) {
           className="mt-2 w-fit py-2 px-4 bg-green-600 text-sm font-semibold text-white rounded-sm
         focus:outline-none focus:ring-1 focus:ring-blue-500 focus:bg-green-700 hover:bg-green-700 active:bg-green-800"
         >
-          Update note
+          Update topic
         </button>
       </div>
     </form>
