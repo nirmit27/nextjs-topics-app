@@ -1,6 +1,6 @@
 import connectToMongoDB from "../../../../lib/mongoConnect.js";
 import Topic from "../../../../models/topic.model.js";
-import { NextResponse, NextRequest } from "next/server.js";
+import { NextResponse } from "next/server.js";
 
 export async function GET() {
   await connectToMongoDB();
@@ -8,16 +8,16 @@ export async function GET() {
   return NextResponse.json({ topics }, { status: 200 });
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(request) {
   const { title, description } = await request.json();
   await connectToMongoDB();
   await Topic.create({ title, description });
   return NextResponse.json({ message: "Topic created" }, { status: 201 });
 }
 
-export async function DELETE(request: NextRequest) {
+export async function DELETE(request) {
   const url = new URL(request.url);
   const id = url.searchParams.get("id");
   await Topic.findByIdAndDelete(id);
-  return NextResponse.json({ message: "Topic deleted." }, { status: 200 });
+  return NextResponse.json({ message: "Topic deleted." }, { status: 204 });
 }
