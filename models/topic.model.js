@@ -1,7 +1,5 @@
-/* Schema definition */
-
-const mongoose = require("mongoose");
-const { Schema } = mongoose;
+import mongoose from "mongoose";
+import { Schema } from "mongoose";
 
 const TopicSchema = new Schema(
   {
@@ -19,6 +17,6 @@ const TopicSchema = new Schema(
   }
 );
 
-const Topic = mongoose.model.Topic || mongoose.model("Topic", TopicSchema);
+const Topic = mongoose.models.Topic || mongoose.model("Topic", TopicSchema);
 
-module.exports = Topic;
+export default Topic;

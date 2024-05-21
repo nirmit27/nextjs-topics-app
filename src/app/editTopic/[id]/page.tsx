@@ -4,7 +4,7 @@ export default function AddTopic() {
   return (
     <form
       method="post"
-      className="mx-auto max-w-3xl mt-3 flex flex-col gap-4 p-6 border border-white bg-white"
+      className="mx-auto max-w-3xl mt-3 flex flex-col gap-4 p-6 border border-white bg-white rounded-md"
     >
       <label htmlFor="title" className="font-semibold text-md">
         Topic title
