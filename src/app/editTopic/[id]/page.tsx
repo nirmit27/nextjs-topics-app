@@ -1,8 +1,7 @@
 import { ObjectId } from "mongoose";
-import { useParams } from "next/navigation";
 import EditForm from "../../../components/EditForm";
 
-async function getNoteById(id: any) {
+async function getNoteById(id: ObjectId) {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/topics/${id}`,
@@ -19,20 +18,10 @@ async function getNoteById(id: any) {
   }
 }
 
-export default async function EditNote() {
-  // const params = useParams();
-  // const { id } = params;
-  // console.log(id);
+export default async function EditNote({ params }: any) {
+  const { id } = params;
 
-  // const topic = await getNoteById(id);
-  // const { title, description } = topic;
+  const oldNote = await getNoteById(id);
 
-  // return (
-  //   <EditForm
-  //     id={id as unknown as ObjectId}
-  //     title={title}
-  //     description={description}
-  //   />
-  // );
-  return <></>;
+  return <EditForm oldNote={oldNote} />;
 }

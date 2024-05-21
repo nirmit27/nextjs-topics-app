@@ -7,11 +7,11 @@ import { NextResponse } from "next/server";
 export async function GET(request, { params }) {
   const { id } = params;
   await connectToMongoDB();
-  const topic = await Topic.findOne({ _id: id });
-  return NextResponse.json({ topic }, { status: 200 });
+  const note = await Topic.findOne({ _id: id });
+  return NextResponse.json({ note }, { status: 200 });
 }
 
-export async function PUT(request, { params }) {
+export async function PATCH(request, { params }) {
   const { id } = params;
   const { newTitle: title, newDescription: description } = await request.json();
   await connectToMongoDB();

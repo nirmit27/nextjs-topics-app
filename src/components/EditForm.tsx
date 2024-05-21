@@ -1,29 +1,22 @@
 "use client";
-import { ObjectId } from "mongoose";
 import { useRouter } from "next/navigation";
 import { useState, FormEvent } from "react";
 
-export default function EditTopic({
-  id,
-  title,
-  description,
-}: {
-  id: ObjectId;
-  title: string;
-  description: string;
-}) {
+export default function EditoldNote({ oldNote }: any) {
+  console.log(oldNote.note._id);
+
   const router = useRouter();
-  const [newTitle, setNewTitle] = useState(title);
-  const [newDescription, setNewDescription] = useState(description);
+  const [newTitle, setNewTitle] = useState(oldNote.note.title);
+  const [newDescription, setNewDescription] = useState(oldNote.note.description);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/topics/${id}`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/topics/${oldNote.note._id}`,
         {
-          method: "PUT",
+          method: "PATCH",
           headers: {
             "Content-type": "application/json",
           },
