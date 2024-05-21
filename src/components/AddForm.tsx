@@ -1,31 +1,36 @@
 "use client";
-import { useRouter } from "next/navigation";
 import { useState, FormEvent } from "react";
+import { useRouter } from "next/navigation";
 
-export default function EditOldTopic({ oldTopic }: any) {
+export default function AddTopic() {
   const router = useRouter();
-  const [newTitle, setNewTitle] = useState(oldTopic.topic.title);
-  const [newDescription, setNewDescription] = useState(oldTopic.topic.description);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
+    if (!title || !description) {
+      alert("Please enter the title and description.");
+      return;
+    }
+
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}api/topics/${oldTopic.topic._id}`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}api/topics/`,
         {
-          method: "PATCH",
+          method: "POST",
           headers: {
             "Content-type": "application/json",
           },
-          body: JSON.stringify({ newTitle, newDescription }),
+          body: JSON.stringify({ title, description }),
         }
       );
 
       if (res.ok) {
         router.replace("/");
         router.refresh();
-      } else throw new Error("Failed to update topic.");
+      } else throw new Error("Failed to create new note.");
     } catch (error) {
       console.error(error);
     }
@@ -37,33 +42,33 @@ export default function EditOldTopic({ oldTopic }: any) {
       className="mx-auto max-w-3xl mt-3 flex flex-col gap-4 p-8 border border-white bg-white rounded-md"
     >
       <label htmlFor="title" className="font-semibold text-md">
-        New title
+        Add title
       </label>
       <input
         type="text"
         name="title"
         id="title"
         onChange={(e) => {
-          setNewTitle(e.target.value);
+          setTitle(e.target.value);
         }}
-        value={newTitle}
+        value={title}
         required
-        placeholder="Enter new title"
+        placeholder="Enter the title"
         className="px-4 py-2 text-sm border border-slate-400 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
       />
       <label htmlFor="desc" className="font-semibold text-md">
-        New description
+        Add description
       </label>
       <input
         type="text"
         name="desc"
         id="desc"
         onChange={(e) => {
-          setNewDescription(e.target.value);
+          setDescription(e.target.value);
         }}
-        value={newDescription}
+        value={description}
         required
-        placeholder="Enter new description"
+        placeholder="Enter the description"
         className="px-4 py-2 text-sm border border-slate-400 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
       />
       <div className="flex justify-end">
@@ -72,7 +77,7 @@ export default function EditOldTopic({ oldTopic }: any) {
           className="mt-2 w-fit py-2 px-4 bg-green-600 text-sm font-semibold text-white rounded-sm
         focus:outline-none focus:ring-1 focus:ring-blue-500 focus:bg-green-700 hover:bg-green-700 active:bg-green-800"
         >
-          Update topic
+          Create topic
         </button>
       </div>
     </form>

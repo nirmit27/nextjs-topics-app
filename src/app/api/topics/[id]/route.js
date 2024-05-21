@@ -5,8 +5,8 @@ import { NextResponse } from "next/server";
 export async function GET(request, { params }) {
   const { id } = params;
   await connectToMongoDB();
-  const note = await Topic.findOne({ _id: id });
-  return NextResponse.json({ note }, { status: 200 });
+  const topic = await Topic.findOne({ _id: id });
+  return NextResponse.json({ topic }, { status: 200 });
 }
 
 export async function PATCH(request, { params }) {
