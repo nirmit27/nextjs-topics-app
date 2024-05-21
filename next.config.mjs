@@ -4,7 +4,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/api/topics/addTopic",
+        source: "api/topics/addTopic",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
@@ -20,7 +20,7 @@ const nextConfig = {
         ],
       },
       {
-        source: "/api/topics/editTopic",
+        source: "api/topics/editTopic",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
@@ -36,7 +36,7 @@ const nextConfig = {
         ],
       },
       {
-        source: "/api/topics/topics/:id",
+        source: "api/topics/topics/:id",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
