@@ -21,6 +21,14 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "lib/mongoConnect.js",
+    "src/app/api/topics/route.js",
+    "src/app/editTopic/[id]/page.tsx"
+  ],
   "exclude": ["node_modules"]
 }

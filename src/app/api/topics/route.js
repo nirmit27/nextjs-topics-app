@@ -1,0 +1,23 @@
+import connectToMongoDB from "../../../../lib/mongoConnect.js";
+import Topic from "../../../../models/topic.model.js";
+import { NextResponse } from "next/server.js";
+
+export async function GET() {
+  await connectToMongoDB();
+  const topics = await Topic.find();
+  return NextResponse.json({ topics }, { status: 200 });
+}
+
+export async function POST(request) {
+  const { title, description } = await request.json();
+  await connectToMongoDB();
+  await Topic.create({ title, description });
+  return NextResponse.json({ message: "Note created" }, { status: 201 });
+}
+
+export async function DELETE(request) {
+  const url = new URL(request.url);
+  const id = url.searchParams.get("id");
+  await Topic.findByIdAndDelete(id);
+  return NextResponse.json({ message: "Note deleted." }, { status: 200 });
+}
