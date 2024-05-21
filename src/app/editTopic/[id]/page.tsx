@@ -14,8 +14,8 @@ export default function AddTopic() {
         name="title"
         id="title"
         required
-        placeholder="Update title"
-        className="px-4 py-2 text-sm border border-slate-400 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-300"
+        placeholder="Enter new title"
+        className="px-4 py-2 text-sm border border-slate-400 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
       />
       <label htmlFor="desc" className="font-semibold text-md">
         Topic description
@@ -25,14 +25,14 @@ export default function AddTopic() {
         name="desc"
         id="desc"
         required
-        placeholder="Update description"
-        className="px-4 py-2 text-sm border border-slate-400 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-300"
+        placeholder="Enter new description"
+        className="px-4 py-2 text-sm border border-slate-400 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
       />
       <div className="flex justify-end">
         <button
           type="submit"
-          className="py-2 px-6 bg-green-600 w-fit text-sm font-semibold text-white rounded-sm
-        focus:outline-none focus:ring-1 focus:ring-blue-300 focus:bg-green-700 hover:bg-green-700 active:bg-green-800"
+          className="mt-2 py-2 px-6 bg-green-600 w-fit text-sm font-semibold text-white rounded-sm
+        focus:outline-none focus:ring-1 focus:ring-blue-500 focus:bg-green-700 hover:bg-green-700 active:bg-green-800"
         >
           Update topic
         </button>
