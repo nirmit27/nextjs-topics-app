@@ -14,7 +14,7 @@ export default function Editoldtopic({ oldTopic }: any) {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/topics/${oldTopic.note._id}`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}api/topics/${oldTopic.note._id}`,
         {
           method: "PATCH",
           headers: {

@@ -4,7 +4,7 @@ import EditForm from "../../../components/EditForm";
 async function getTopicById(id: ObjectId) {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/topics/${id}`,
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}api/topics/${id}`,
       {
         cache: "no-store",
       }

@@ -11,7 +11,7 @@ export default function RemoveButton({ id }: { id: ObjectId }) {
 
     if (confirmed) {
       await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/topics?id=${id}`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}api/topics?id=${id}`,
         {
           method: "DELETE",
         }
