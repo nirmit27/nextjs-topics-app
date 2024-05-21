@@ -1,10 +1,8 @@
-// For upating a record, we need a dynamic route to access it.
-
 import connectToMongoDB from "../../../../../lib/mongoConnect";
 import Topic from "../../../../../models/topic.model.js";
 import { NextResponse } from "next/server";
 
-export async function GET(request, { params }) {
+export async function GET({ params }) {
   const { id } = params;
   await connectToMongoDB();
   const note = await Topic.findOne({ _id: id });
