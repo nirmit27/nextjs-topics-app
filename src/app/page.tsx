@@ -1,9 +1,9 @@
-import NoteList from "../components/NoteList";
+import TopicList from "../components/TopicList";
 
 export default function Home() {
   return (
     <div className="mx-auto max-w-3xl">
-      <NoteList />
+      <TopicList />
     </div>
   );
 }

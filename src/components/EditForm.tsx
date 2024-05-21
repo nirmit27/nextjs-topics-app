@@ -2,19 +2,19 @@
 import { useRouter } from "next/navigation";
 import { useState, FormEvent } from "react";
 
-export default function Editoldtopic({ oldNote }: any) {
-  console.log(oldNote.note._id);
+export default function Editoldtopic({ oldTopic }: any) {
+  console.log(oldTopic.note._id);
 
   const router = useRouter();
-  const [newTitle, setNewTitle] = useState(oldNote.note.title);
-  const [newDescription, setNewDescription] = useState(oldNote.note.description);
+  const [newTitle, setNewTitle] = useState(oldTopic.note.title);
+  const [newDescription, setNewDescription] = useState(oldTopic.note.description);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/topics/${oldNote.note._id}`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/topics/${oldTopic.note._id}`,
         {
           method: "PATCH",
           headers: {

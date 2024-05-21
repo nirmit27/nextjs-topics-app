@@ -1,6 +1,6 @@
-# Notes App
+# CRUD Topics
 
-This is a simple web application that lets the user **create**, **read**, **update** and **delete** notes. 📝
+This is a simple web application that lets the users **create**, **read**, **update** and **delete** topics. 📝
 
 ## Getting Started
 
@@ -27,8 +27,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 ### Home page
 ![Home](./public/images/home.png)
 
-### Creating a new note
+### Creating a new topic
 ![Create new note](./public/images/createNote.png)
 
-### Updating an existing note
+### Updating an existing topic
 ![Update existing note](./public/images/updateNote.png)

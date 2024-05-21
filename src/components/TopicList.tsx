@@ -3,7 +3,7 @@ import RemoveButton from "./RemoveButton";
 import { HiPencilAlt } from "react-icons/hi";
 import { Key } from "react";
 
-async function getNotes() {
+async function getTopics() {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/topics/`,
@@ -19,8 +19,8 @@ async function getNotes() {
   }
 }
 
-export default async function NoteList() {
-  const { topics } = await getNotes();
+export default async function TopicList() {
+  const { topics } = await getTopics();
   return (
     <>
       {topics.map((topic: any, i: Key) => (

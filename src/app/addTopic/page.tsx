@@ -78,7 +78,7 @@ export default function AddTopic() {
           className="mt-2 w-fit py-2 px-4 bg-green-600 text-sm font-semibold text-white rounded-sm
         focus:outline-none focus:ring-1 focus:ring-blue-500 focus:bg-green-700 hover:bg-green-700 active:bg-green-800"
         >
-          Create note
+          Create topic
         </button>
       </div>
     </form>

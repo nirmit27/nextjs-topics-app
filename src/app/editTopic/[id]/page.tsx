@@ -1,7 +1,7 @@
 import { ObjectId } from "mongoose";
 import EditForm from "../../../components/EditForm";
 
-async function getNoteById(id: ObjectId) {
+async function getTopicById(id: ObjectId) {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/topics/${id}`,
@@ -11,7 +11,7 @@ async function getNoteById(id: ObjectId) {
     );
 
     if (res.ok) return res.json();
-    else throw new Error("Failed to fetch previous note.");
+    else throw new Error("Failed to fetch previous topic.");
   } catch (error) {
     console.log(error);
     return {};
@@ -21,7 +21,7 @@ async function getNoteById(id: ObjectId) {
 export default async function EditNote({ params }: any) {
   const { id } = params;
 
-  const oldNote = await getNoteById(id);
+  const oldTopic = await getTopicById(id);
 
-  return <EditForm oldNote={oldNote} />;
+  return <EditForm oldTopic={oldTopic} />;
 }
