@@ -17,7 +17,7 @@ export default function Navbar() {
           Create
         </Link>
         <Link
-          href={"/editTopic"}
+          href={"/editTopic/:id"}
           className="text-md px-4 py-2 text-slate-600 focus:text-slate-800 focus:outline-none focus:underline focus:underline-offset-2 hover:text-slate-800 hover:underline hover:underline-offset-2"
         >
           Update
