@@ -5,9 +5,9 @@ export default function Navbar() {
     <div className="flex items-center justify-between bg-slate-200 px-8 py-4 mx-auto max-w-3xl mb-8 shadow-sm shadow-black">
       <Link
         href={"/"}
-        className="font-bold text-xl focus:outline-none focus:text-slate-900 hover:text-slate-900"
+        className="font-bold text-2xl focus:outline-none focus:text-slate-700 hover:text-slate-700"
       >
-        CRUD App
+        Notes
       </Link>
       <div className="flex justify-between items-center">
         <Link

@@ -2,26 +2,40 @@ import Link from "next/link";
 import RemoveButton from "./RemoveButton";
 import { HiPencilAlt } from "react-icons/hi";
 
-export default function TopicList() {
+async function getTopics() {
+  try {
+    const res = await fetch("http://localhost:3000/api/topics/", {
+      cache: "no-store",
+    });
+    if (!res.ok) throw new Error("Failed to fetch topics!");
+    else return res.json();
+  } catch (error) {
+    console.log(error);
+    return { topics: [] };
+  }
+}
+
+export default async function TopicList() {
+  const { topics } = await getTopics();
   return (
-    <div className="bg-white rounded-md p-6 mt-3 mx-auto flex justify-between items-start gap-4">
-      <div className="flex flex-col gap-2">
-        <h1 className="text-xl font-bold">Topic title</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laborum
-          rerum facilis reiciendis expedita facere, quidem a quia quae possimus
-          ab provident ipsam in architecto! Deserunt sed cupiditate laborum a?
-        </p>
-      </div>
-      <div className="flex gap-2">
-        <Link
-          href={"/editTopic"}
-          className="text-slate-700 hover:text-slate-800 focus:outline-none focus:text-slate-800"
-        >
-          <HiPencilAlt size={24} />
-        </Link>
-        <RemoveButton />
-      </div>
-    </div>
+    <>
+      {topics.map((topic: any) => (
+        <div className="bg-white rounded-md p-8 mt-4 mx-auto flex justify-between items-start gap-4">
+          <div className="flex flex-col gap-2">
+            <h1 className="text-xl font-bold">{topic.title}</h1>
+            <p>{topic.description}</p>
+          </div>
+          <div className="flex gap-2">
+            <Link
+              href={`/editTopic/${topic._id}`}
+              className="text-slate-700 hover:text-black focus:outline-none focus:text-black"
+            >
+              <HiPencilAlt size={24} />
+            </Link>
+            <RemoveButton />
+          </div>
+        </div>
+      ))}
+    </>
   );
 }
