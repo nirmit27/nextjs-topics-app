@@ -12,12 +12,12 @@ export async function POST(request) {
   const { title, description } = await request.json();
   await connectToMongoDB();
   await Topic.create({ title, description });
-  return NextResponse.json({ message: "Topic created" }, { status: 201 });
+  return NextResponse.json({ message: "Note created" }, { status: 201 });
 }
 
 export async function DELETE(request) {
   const url = new URL(request.url);
   const id = url.searchParams.get("id");
   await Topic.findByIdAndDelete(id);
-  return NextResponse.json({ message: "Topic deleted." }, { status: 204 });
+  return NextResponse.json({ message: "Note deleted." }, { status: 200 });
 }

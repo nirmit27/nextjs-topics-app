@@ -16,5 +16,5 @@ export async function PUT(request, { params }) {
   const { newTitle: title, newDescription: description } = await request.json();
   await connectToMongoDB();
   await Topic.findByIdAndUpdate(id, { title, description });
-  return NextResponse.json({ message: "Topic updated." }, { status: 200 });
+  return NextResponse.json({ message: "Note updated." }, { status: 200 });
 }

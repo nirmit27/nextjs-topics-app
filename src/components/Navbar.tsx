@@ -9,20 +9,12 @@ export default function Navbar() {
       >
         Notes
       </Link>
-      <div className="flex justify-between items-center">
-        <Link
-          href={"/addTopic"}
-          className="text-md px-4 py-2 text-slate-600 focus:text-slate-800 focus:outline-none focus:underline focus:underline-offset-2 hover:text-slate-800 hover:underline hover:underline-offset-2 font-semibold"
-        >
-          Create
-        </Link>
-        <Link
-          href={"/editTopic/:id"}
-          className="text-md px-4 py-2 text-slate-600 focus:text-slate-800 focus:outline-none focus:underline focus:underline-offset-2 hover:text-slate-800 hover:underline hover:underline-offset-2 font-semibold"
-        >
-          Update
-        </Link>
-      </div>
+      <Link
+        href={"/addTopic"}
+        className="text-md px-4 py-2 text-slate-600 focus:text-slate-800 focus:outline-none focus:underline focus:underline-offset-2 hover:text-slate-800 hover:underline hover:underline-offset-2 font-semibold"
+      >
+        Create
+      </Link>
     </div>
   );
 }
