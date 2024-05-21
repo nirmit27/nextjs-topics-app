@@ -9,14 +9,20 @@ export default function Navbar() {
       >
         CRUD App
       </Link>
-      <Link
-        href={"/addTopic"}
-        className="text-sm rounded-md bg-green-500 px-4 py-2 text-white 
-        focus:outline-none focus:bg-green-600 hover:bg-green-600 active:bg-green-700
-        focus:ring-1 focus:ring-slate-600"
-      >
-        Add topic
-      </Link>
+      <div className="flex justify-between items-center">
+        <Link
+          href={"/addTopic"}
+          className="text-md px-4 py-2 text-slate-600 focus:text-slate-800 focus:outline-none focus:underline focus:underline-offset-2 hover:text-slate-800 hover:underline hover:underline-offset-2"
+        >
+          Create
+        </Link>
+        <Link
+          href={"/editTopic"}
+          className="text-md px-4 py-2 text-slate-600 focus:text-slate-800 focus:outline-none focus:underline focus:underline-offset-2 hover:text-slate-800 hover:underline hover:underline-offset-2"
+        >
+          Update
+        </Link>
+      </div>
     </div>
   );
 }
