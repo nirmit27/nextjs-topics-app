@@ -3,8 +3,6 @@ import { useRouter } from "next/navigation";
 import { useState, FormEvent } from "react";
 
 export default function Editoldtopic({ oldTopic }: any) {
-  console.log(oldTopic.note._id);
-
   const router = useRouter();
   const [newTitle, setNewTitle] = useState(oldTopic.note.title);
   const [newDescription, setNewDescription] = useState(oldTopic.note.description);
