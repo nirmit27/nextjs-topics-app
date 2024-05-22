@@ -39,7 +39,7 @@ export default function AddTopic() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto max-w-3xl mt-3 flex flex-col gap-4 p-8 border border-white bg-white rounded-md"
+      className="lg:mx-auto md:mx-6 mx-4 max-w-3xl mt-3 flex flex-col md:gap-4 gap-2 lg:p-8 md:p-6 p-5 border border-white bg-white rounded-md"
     >
       <label htmlFor="title" className="font-semibold text-md">
         Add title
@@ -74,7 +74,7 @@ export default function AddTopic() {
       <div className="flex justify-end">
         <button
           type="submit"
-          className="mt-2 w-fit py-2 px-4 bg-green-600 text-sm font-semibold text-white rounded-sm
+          className="md:mt-0 mt-2 w-fit py-2 px-4 bg-green-600 text-sm font-semibold text-white rounded-sm
         focus:outline-none focus:ring-1 focus:ring-blue-500 focus:bg-green-700 hover:bg-green-700 active:bg-green-800"
         >
           Create topic
