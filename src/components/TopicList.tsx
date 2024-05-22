@@ -29,8 +29,8 @@ export default async function TopicList() {
           key={i}
         >
           <div className="flex flex-col gap-2">
-            <h1 className="md:text-xl sm:text-md font-bold">{topic.title}</h1>
-            <p className="md:text-sm text-xs">{topic.description}</p>
+            <h1 className="md:text-xl sm:text-md font-bold">{topic.title.trim()}</h1>
+            <p className="md:text-sm text-xs">{topic.description.trim()}</p>
           </div>
           <div className="flex md:gap-2 gap-1">
             <Link

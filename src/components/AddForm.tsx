@@ -49,7 +49,7 @@ export default function AddTopic() {
         name="title"
         id="title"
         onChange={(e) => {
-          setTitle(e.target.value);
+          setTitle(e.target.value.replace(/[\r\n\t\\]+/, ""));
         }}
         value={title}
         required
@@ -64,7 +64,7 @@ export default function AddTopic() {
         name="desc"
         id="desc"
         onChange={(e) => {
-          setDescription(e.target.value);
+          setDescription(e.target.value.replace(/[\r\n\t\\]+/, ""));
         }}
         value={description}
         required

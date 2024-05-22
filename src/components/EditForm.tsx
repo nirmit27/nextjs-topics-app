@@ -46,7 +46,7 @@ export default function EditOldTopic({ oldTopic }: any) {
         name="title"
         id="title"
         onChange={(e) => {
-          setNewTitle(e.target.value);
+          setNewTitle(e.target.value.replace(/[\r\n\t\\]+/, ""));
         }}
         value={newTitle}
         required
@@ -61,7 +61,7 @@ export default function EditOldTopic({ oldTopic }: any) {
         name="desc"
         id="desc"
         onChange={(e) => {
-          setNewDescription(e.target.value);
+          setNewDescription(e.target.value.replace(/[\r\n\t\\]+/, ""));
         }}
         value={newDescription}
         required
