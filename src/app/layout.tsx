@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="h-screen bg-slate-800 w-screen py-8 overflow-y-auto">
+        <div className="h-screen bg-slate-800 w-screen lg:py-6 overflow-y-auto">
           <Navbar />
           {children}
         </div>
