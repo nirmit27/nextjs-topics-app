@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +25,7 @@ export default function RootLayout({
         <div className="h-screen bg-slate-800 w-screen lg:py-6 overflow-y-auto">
           <Navbar />
           {children}
-           <Analytics />
+          <Analytics />
         </div>
       </body>
     </html>
